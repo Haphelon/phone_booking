@@ -1,0 +1,29 @@
+spring:
+  profiles:
+    active: development
+  application:
+    name: phone-booking
+mock-server:
+  url:
+    devices: 'https://b30163c3-09f9-4de3-b2ec-0948535557f0.mock.pstmn.io/devices'
+server:
+  port: 8181
+---
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/phone_booking
+    password: 3num@ Elish
+    username: aombewa
+    driver-class-name: org.mariadb.jdbc.Driver
+    hikari:
+      validation-timeout: 300000
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: create
+      use-new-id-generator-mappings: false
+    database: mysql
+  config:
+    activate:
+      on-profile: development
+---
